@@ -24,9 +24,9 @@ FROM Products
 GROUP BY Category
 
 SELECT *,
-	IIF(sum(Stock) = 0,
+	IIF(Stock = 0,
 		'Out of Stock',
-		IIF(sum(Stock) BETWEEN 0 AND 10,
+		IIF(Stock BETWEEN 0 AND 10,
 		'Low Stock', 'In Stock')
 		) AS InStatus
 FROM Products
