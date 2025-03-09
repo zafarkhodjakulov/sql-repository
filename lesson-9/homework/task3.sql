@@ -1,8 +1,8 @@
 declare @n int = 10;
 ;with cte(n, Fibonacci_Number, rnk) as (
-	select 1, 1, 0
+	select 1, 1, 1
 	union all
-	select n + 1, (Fibonacci_Number) + rnk, Fibonacci_Number
+	select n + 1, rnk, Fibonacci_Number + rnk
 	from cte
 	where n < @n
 )
