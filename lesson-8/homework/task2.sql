@@ -29,7 +29,7 @@ from (
 			t.yil as y
 		from (
 			select ordinal + 1970 as yil
-			from string_split(replicate(',', year(getdate()) - 1970), ',', 1)) t
+			from string_split(replicate(',', year(getdate()) - 1971), ',', 1)) t
 		left join emplooyees_n e
 			on year(e.hiredate) = t.yil
 		where year(e.hiredate) is null
